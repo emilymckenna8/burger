@@ -1,0 +1,45 @@
+<h1>Burger Time!</h1>
+
+<h2>Add a Burger</h2>
+
+<form group="create-form">
+  <div class="form-group">
+    <label for="bd">Burger Name:</label>
+    <input type="text" id="bd" name="burger_name">
+  </div>
+
+  <button type="submit">Add Burger</button>
+</form>
+
+<h2>Burgers that are available:</h2>
+
+<div>
+  <form class="update_burger">
+  {{#each burgers}}
+    {{#unless devoured}}
+      
+      <ul>
+        
+      <p>{{this.id}}. {{this.burger_name}}  <button type="submit" class="btn btn-warning btn-xs" id="change-status" data-id="{{id}}" data-newdevoured="{{devoured}}">Devour</button></p>   
+        
+     </ul>
+
+    {{/unless}}
+  {{/each}}
+</form>
+</div>
+
+<h2>Burgers that have already been eaten:</h2>
+
+<div>
+  {{#each burgers}}
+    {{#if devoured}}
+      <ul>
+      {{burger_name}}
+      </ul>
+    {{/if}}
+  {{/each}}
+</div>
+
+
+
